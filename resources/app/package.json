@@ -1,7 +1,7 @@
 {
   "name": "infaselector",
   "version": "1.0.0",
-  "description": "",
+  "description": "A alternive to MultiMC",
   "main": "index.js",
   "scripts": {
     "start": "electron ."
