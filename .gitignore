@@ -1,3 +1,17 @@
+# Other random stuff
 node_modules
 cli/test
 assets
+
+# Outputs, this is in releases.
+infaSelector-darwin-arm64
+infaSelector-darwin-x64
+infaSelector-linux-arm64
+infaSelector-linux-armv7l
+infaSelector-linux-x64
+infaSelector-linux-ia32
+infaSelector-mas-arm64
+infaSelector-mas-x64
+infaSelector-win32-arm64
+infaSelector-win32-ia32
+infaSelector-win32-x64
