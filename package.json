@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "icon": ""
+  "icon": "img/icon-128x.png",
   "scripts": {
     "start": "electron ."
   },
