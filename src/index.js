@@ -20,7 +20,10 @@ function startTestf1() {
 }
 
 function exitSettings() {
-	preferences.style.display = "none";
+	document.getElementById("pref-parent").style.opacity = 0;
+	document.getElementById("pref-parent").style.pointerEvents = "none";
+	// preferences.style.display = "none";
+	// document.getElementById("pref-overlay").style.display = "none";
 }
 
 function editTypef1() {

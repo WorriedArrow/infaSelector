@@ -4,16 +4,19 @@
 	"description": "",
 	"main": "index.js",
 	"icon": "img/icon-128x.png",
+	"displayName": "infaSelector",
 	"productName": "infaSelector",
 	"scripts": {
-		"start": "electron ."
+		"start": "electron .",
+		"build": "electron-bulder"
 	},
 	"author": "",
 	"license": "ISC",
 	"devDependencies": {
+		"@electron-forge/cli": "^6.0.0-beta.63",
 		"electron": "^16.0.7",
-		"electron-winstaller": "^5.0.0",
-		"electron-packager": "^15.4.0"
+		"electron-packager": "^15.4.0",
+		"electron-winstaller": "^5.0.0"
 	},
 	"dependencies": {
 		"flying-squid": "^1.5.0",
