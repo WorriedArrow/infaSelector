@@ -4,8 +4,10 @@ const preferences = document.getElementById("preferences");
 // settingsf1.style.document = "none"
 preferences.style.document = "none";
 // consolef1.style.display = "none";
-//const { Client } = require("minecraft-launcher-core");
+const { Client } = require("minecraft-launcher-core");
 const cligate = require("./cli-gate");
+let fileOpened = false;
+let aboutOpened = false;
 
 document.getElementById("settings-btn-apply-and-close").onclick = exitSettings;
 document.getElementById("settings-btn-close").onclick = exitSettings;
@@ -19,11 +21,53 @@ function startTestf1() {
 	sgame();
 }
 
+function openMenu(menu) {
+	const fileMenu = document.getElementById("file-content");
+	const aboutMenu = document.getElementById("about-content");
+	if (menu == "file") {
+		if (!fileOpened) {
+			fileMenu.style.pointerEvents = "all";
+			fileMenu.style.opacity = 1;
+			fileOpened = true;
+			if (aboutOpened) openMenu("about");
+			console.log("fileOpened");
+		} else {
+			fileMenu.style.pointerEvents = "none";
+			fileMenu.style.opacity = 0;
+			fileOpened = false;
+			console.log("fileClosed");
+		}
+	} else if (menu == "about") {
+		if (!aboutOpened) {
+			aboutMenu.style.pointerEvents = "all";
+			aboutMenu.style.opacity = 1;
+			aboutOpened = true;
+			if (fileOpened) openMenu("file");
+			console.log("aboutOpened");
+		} else {
+			aboutMenu.style.pointerEvents = "none";
+			aboutMenu.style.opacity = 0;
+			aboutOpened = false;
+			console.log("aboutClosed");
+		}
+	}
+}
+
+function openSettings() {
+	document.getElementById("pref-parent").style.display = "block";
+	document.getElementById("pref-parent").style.opacity = 1;
+	document.getElementById("pref-parent").style.pointerEvents = "all";
+}
+
+function exit() {
+	console.log("exit");
+	app.exit();
+}
+
 function exitSettings() {
+	document.getElementById("pref-parent").style.display = "none";
 	document.getElementById("pref-parent").style.opacity = 0;
 	document.getElementById("pref-parent").style.pointerEvents = "none";
-	// preferences.style.display = "none";
-	// document.getElementById("pref-overlay").style.display = "none";
 }
 
 function editTypef1() {

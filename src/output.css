@@ -621,8 +621,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
 }
 
-.bg-opacity-75 {
-  --tw-bg-opacity: 0.75;
+.bg-opacity-40 {
+  --tw-bg-opacity: 0.4;
 }
 
 .bg-gradient-to-r {
@@ -733,6 +733,26 @@ Ensure the default browser behavior of the `hidden` attribute.
   line-height: 1.25rem;
 }
 
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.text-9xl {
+  font-size: 8rem;
+  line-height: 1;
+}
+
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
+}
+
 .font-medium {
   font-weight: 500;
 }
@@ -806,6 +826,13 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .ease-in {
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+}
+
+*, *::before, *::after {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .tab-bar-item {
@@ -950,14 +977,42 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 .tab-bar-content {
+  pointer-events: none;
   position: absolute;
   display: block;
   padding-top: 0.5rem;
+  opacity: 0;
 }
 
 .tab-bar-menu-item {
   cursor: pointer;
   padding-left: 1.25rem;
+}
+
+.pref-parent {
+  pointer-events: none;
+  opacity: 0;
+  display: none !important;
+}
+
+.game-info {
+  margin-bottom: 1rem;
+  border-bottom-width: 2px;
+  --tw-border-opacity: 1;
+  border-color: rgb(229 231 235 / var(--tw-border-opacity));
+  padding-bottom: 1rem;
+}
+
+.game-info--end {
+  border-bottom-width: 0px !important;
+  padding-bottom: 0px !important;
+}
+
+.select {
+  -webkit-user-select: text !important;
+     -moz-user-select: text !important;
+      -ms-user-select: text !important;
+          user-select: text !important;
 }
 
 .hover\:text-blue-700:hover {
