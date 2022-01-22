@@ -1,6 +1,6 @@
 {
 	"name": "infaselector",
-	"version": "1.2",
+	"version": "1.2.0",
 	"description": "",
 	"main": "index.js",
 	"icon": "./img/icon-512x.png",
