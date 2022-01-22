@@ -1,7 +1,7 @@
 {
 	"name": "infaselector",
 	"version": "1.2.0",
-	"description": "",
+	"description": "An unofficial Minecraft launcher like MultiMC.",
 	"main": "index.js",
 	"icon": "./img/icon-512x.png",
 	"displayName": "infaSelector",

@@ -1,8 +1,5 @@
 //const consolef1 = document.getElementById("consolef1");
 const settingsf1 = document.getElementById("settingsf1");
-const preferences = document.getElementById("preferences");
-// settingsf1.style.document = "none"
-preferences.style.document = "none";
 // consolef1.style.display = "none";
 const { Client } = require("minecraft-launcher-core");
 const cligate = require("./cli-gate");
@@ -11,15 +8,6 @@ let aboutOpened = false;
 
 document.getElementById("settings-btn-apply-and-close").onclick = exitSettings;
 document.getElementById("settings-btn-close").onclick = exitSettings;
-
-document.getElementById("can").onclick = function () {
-	consolef1.style.display = "none";
-};
-
-function startTestf1() {
-	consolef1.style.display = "block";
-	sgame();
-}
 
 function openMenu(menu) {
 	const fileMenu = document.getElementById("file-content");
@@ -59,19 +47,10 @@ function openSettings() {
 	document.getElementById("pref-parent").style.pointerEvents = "all";
 }
 
-function exit() {
-	console.log("exit");
-	app.exit();
-}
-
 function exitSettings() {
 	document.getElementById("pref-parent").style.display = "none";
 	document.getElementById("pref-parent").style.opacity = 0;
 	document.getElementById("pref-parent").style.pointerEvents = "none";
-}
-
-function editTypef1() {
-	settingsf1.style.display = "block";
 }
 
 function sgame() {
