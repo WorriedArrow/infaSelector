@@ -44,7 +44,7 @@
 
 .pref-parent {
 	@apply opacity-0 pointer-events-none;
-	display: none !important;
+	transition: opacity 300ms ease-in-out 100ms;
 }
 
 .game-info {

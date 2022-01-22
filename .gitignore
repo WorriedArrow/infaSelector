@@ -4,7 +4,7 @@ cli/test
 assets
 
 # Distributions, this is in releases.
-dist
+infaselector-win32-*
 
 # Executable files
 *.exe

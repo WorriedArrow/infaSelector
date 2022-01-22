@@ -3,6 +3,7 @@ const settingsf1 = document.getElementById("settingsf1");
 // consolef1.style.display = "none";
 const { Client } = require("minecraft-launcher-core");
 const cligate = require("./cli-gate");
+const remote = require("electron").remote;
 let fileOpened = false;
 let aboutOpened = false;
 
@@ -39,6 +40,12 @@ function openMenu(menu) {
 			console.log("aboutClosed");
 		}
 	}
+}
+
+document.getElementById("file-exit").onclick = exit();
+
+function exit() {
+	remote.getCurrentWindow().close();
 }
 
 function openSettings() {

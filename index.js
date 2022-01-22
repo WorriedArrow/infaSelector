@@ -1,9 +1,6 @@
 const { app, BrowserWindow } = require("electron");
 const electron = require("electron");
 const remote = electron.remote;
-const getWin = () => {
-	return win;
-};
 var win;
 const createWindow = () => {
 	const win = new BrowserWindow({
@@ -14,6 +11,7 @@ const createWindow = () => {
 			contextIsolation: false,
 		},
 		resizable: false,
+		icon: "./img/icon-128x.ico",
 	});
 
 	win.loadFile("./src/index.html");
@@ -23,4 +21,12 @@ const createWindow = () => {
 
 app.whenReady().then(() => {
 	win = createWindow();
+	console.log("app started up");
 });
+
+class ExitApplication {
+	exit() {
+		console.log("exiting");
+		remote.getCurrentWindow().close();
+	}
+}

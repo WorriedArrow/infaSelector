@@ -35,14 +35,14 @@
 				<div class="tab-bar-panel">
 					<button class="tab-bar-item" onclick="openMenu('file')">File</button>
 					<div class="tab-bar-content" id="file-content">
-						<div class="tab-bar-menu-item" onclick="openSettings()">Settings</div>
-						<div class="tab-bar-menu-item" onclick="exit()">Exit</div>
+						<div class="tab-bar-menu-item" id="file-settings" onclick="openSettings()">Settings</div>
+						<div class="tab-bar-menu-item" id="file-exit" onclick="new ExitApplication().exit();">Exit</div>
 					</div>
 				</div>
 				<div class="tab-bar-panel">
 					<button class="tab-bar-item" onclick="openMenu('about')">About</button>
 					<div class="tab-bar-content" id="about-content">
-						<div class="tab-bar-menu-item">Test</div>
+						<div class="tab-bar-menu-item" id="about-test">Test</div>
 					</div>
 				</div>
 			</div>
@@ -91,7 +91,7 @@
 				<button class="btn">Add</button>
 			</div>
 		</div>
-		<div id="pref-parent" class="fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+		<div id="pref-parent" class="opacity-0 pointer-events-none fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
 			<div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
 				<!--
       				Background overlay, show/hide based on modal state.
