@@ -652,11 +652,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-right: 1.5rem;
 }
 
-.px-5 {
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-}
-
 .py-3 {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
@@ -940,9 +935,29 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 
-.hover\:bg-gray-300:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
+.ubuntu {
+  font-family: "Ubuntu", "Segoe UI", "Helvetica Neue", sans-serif;
+}
+
+.tab-bar-main {
+  position: relative;
+  display: inline-block;
+}
+
+.tab-bar-panel {
+  display: inline-block;
+  padding-right: 1.5rem;
+}
+
+.tab-bar-content {
+  position: absolute;
+  display: block;
+  padding-top: 0.5rem;
+}
+
+.tab-bar-menu-item {
+  cursor: pointer;
+  padding-left: 1.25rem;
 }
 
 .hover\:text-blue-700:hover {

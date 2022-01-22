@@ -1,7 +1,12 @@
-# Other random stuff
+# Random stuff
 node_modules
 cli/test
 assets
 
-# Distribution, this is in releases.
+# Distributions, this is in releases.
 dist
+
+# Executable files
+*.exe
+*.dll
+*.app

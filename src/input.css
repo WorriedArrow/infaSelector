@@ -1,9 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/*/    Ubuntu    | /*/
-/*/ Google Fonts V /*/
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@500;700&display=swap");
 
 .tab-bar-item {
 	@apply px-5 hover:bg-gray-300 ease-in-out transition-all duration-700 rounded-t-md;
@@ -21,4 +18,21 @@
 
 .ubuntu {
 	font-family: "Ubuntu", "Segoe UI", "Helvetica Neue", sans-serif;
+}
+
+.tab-bar-main {
+	position: relative;
+	display: inline-block;
+}
+
+.tab-bar-panel {
+	@apply pr-6 inline-block;
+}
+
+.tab-bar-content {
+	@apply absolute block pt-2;
+}
+
+.tab-bar-menu-item {
+	@apply pl-5 cursor-pointer;
 }

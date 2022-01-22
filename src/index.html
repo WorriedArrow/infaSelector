@@ -3,26 +3,49 @@
 	<head>
 		<title>infaSelector</title>
 		<link rel="stylesheet" href="output.css" />
+		<script src="./index.js" defer></script>
+		<!--  Google Fonts imports  -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500;700&display=swap" rel="stylesheet" />
+
+		<link rel="shortcut icon" href="../img/icon-128x.png" type="image/png" />
 	</head>
 	<body>
 		<div class="bg-gradient-to-r from-sky-500 to-indigo-500 pt-16 pb-12">
 			<div class="bg-gradient-to-r from-sky-500 to-indigo-500"></div>
 			<div class="relative px-4 p-4 pb-9 bg-white shadow-xl ring-1 ring-gray-900/5 sm:max-w-lg sm:mx-auto sm:rounded-xl rounded-xl sm:p">
-				<p class="text-2xl text-center pb-3">Welcome to infaSelector OutaDevelopment 1.2</p>
+				<p class="text-2xl text-center pb-3 ubuntu">Welcome to infaSelector OutaDevelopment 1.2</p>
 				<p class="ml-4">Please check out some of these websites:</p>
 				<ul class="list-disc ml-12">
-					<li><a href="https://github.com/Lucas4545ah/infaSelector" class="text-blue-500 hover:text-blue-700 hover:underline hover:underline-offset-4">GitHub</a> - check out source code</li>
-					<li><a href="https://electronjs.org" class="text-blue-500 hover:text-blue-700 hover:underline hover:underline-offset-4">Electron</a> - made GUI mode possible</li>
-					<li><a href="https://www.npmjs.com/package/minecraft-launcher-core" class="text-blue-500 hover:text-blue-700 hover:underline hover:underline-offset-4">minecraft-launcher-core</a> - made launching Minecraft into an npm package</li>
-					<li><a href="https://tailwindcss.com" class="text-blue-500 hover:text-blue-700 hover:underline hover:underline-offset-4">TailwindCSS</a> - made making web UI way faster</li>
+					<li><a href="https://github.com/Lucas4545ah/infaSelector" target="_blank" class="text-blue-500 hover:text-blue-700 hover:underline hover:underline-offset-4">GitHub</a> - check out source code</li>
+					<li><a href="https://electronjs.org" target="_blank" class="text-blue-500 hover:text-blue-700 hover:underline hover:underline-offset-4">Electron</a> - made GUI mode possible</li>
+					<li>
+						<a href="https://www.npmjs.com/package/minecraft-launcher-core" target="_blank" class="text-blue-500 hover:text-blue-700 hover:underline hover:underline-offset-4">minecraft-launcher-core</a> - made launching Minecraft into an
+						npm package
+					</li>
+					<li><a href="https://tailwindcss.com" target="_blank" class="text-blue-500 hover:text-blue-700 hover:underline hover:underline-offset-4">TailwindCSS</a> - made making web UI way faster</li>
 				</ul>
 			</div>
 		</div>
 		<div class="relative px-6 pt-10 pb-8 bg-white shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:rounded-lg sm:px-10">
-			<button class="tab-bar-item">File</button>
-			<button class="tab-bar-item">About</button>
+			<div class="tab-bar-main">
+				<div class="tab-bar-panel">
+					<button class="tab-bar-item">File</button>
+					<div class="tab-bar-content">
+						<div class="tab-bar-menu-item">Settings</div>
+						<div class="tab-bar-menu-item">Exit</div>
+					</div>
+				</div>
+				<div class="tab-bar-panel">
+					<button class="tab-bar-item">About</button>
+					<div class="tab-bar-content">
+						<div class="tab-bar-menu-item">Test</div>
+					</div>
+				</div>
+			</div>
 			<div class="relative px-6 pt-10 pb-8 bg-white shadow-xl ring-1 ring-gray-900/5 sm:max-w-lg sm:mx-auto sm:rounded-lg sm:px-10">
-				<a class="text-xl">Name: Test 1</a>
+				<a class="text-xl ubuntu">Name: Test 1</a>
 				<button class="btn">Play</button>
 				<button class="btn">Settings</button>
 			</div>
@@ -74,7 +97,7 @@
 								</svg>
 							</div>
 							<div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-								<h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">Settings</h3>
+								<h3 class="text-lg leading-6 font-medium text-gray-900 ubuntu" id="modal-title">Settings</h3>
 								<div class="mt-2">
 									<p class="text-sm text-gray-500">
 										<button class="tab-bar-item">General</button>
@@ -87,14 +110,12 @@
 						</div>
 					</div>
 					<div class="px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-						<button type="button" class="btn-critical" id="settings-btn-close">Close</button>
+						<button type="button" class="btn-critical" id="settings-btn-close" onclick="exitSettings()">Close</button>
 						<button type="button" class="btn" id="settings-btn-apply">Apply</button>
-						<button type="button" class="btn" id="settings-btn-apply-and-close">Apply & Close</button>
+						<button type="button" class="btn" id="settings-btn-apply-and-close" onclick="exitSettings()">Apply & Close</button>
 					</div>
 				</div>
 			</div>
 		</div>
 	</body>
 </html>
-
-<script src="index.js"></script>
