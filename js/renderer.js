@@ -1,52 +1,5 @@
-//const consolef1 = document.getElementById("consolef1");
-const settingsf1 = document.getElementById("settingsf1");
-// consolef1.style.display = "none";
 const { Client } = require("minecraft-launcher-core");
-const cligate = require("./cli-gate");
-const remote = require("electron").remote;
-let fileOpened = false;
-let aboutOpened = false;
-
-document.getElementById("settings-btn-apply-and-close").onclick = exitSettings;
-document.getElementById("settings-btn-close").onclick = exitSettings;
-
-function openMenu(menu) {
-	const fileMenu = document.getElementById("file-content");
-	const aboutMenu = document.getElementById("about-content");
-	if (menu == "file") {
-		if (!fileOpened) {
-			fileMenu.style.pointerEvents = "all";
-			fileMenu.style.opacity = 1;
-			fileOpened = true;
-			if (aboutOpened) openMenu("about");
-			console.log("fileOpened");
-		} else {
-			fileMenu.style.pointerEvents = "none";
-			fileMenu.style.opacity = 0;
-			fileOpened = false;
-			console.log("fileClosed");
-		}
-	} else if (menu == "about") {
-		if (!aboutOpened) {
-			aboutMenu.style.pointerEvents = "all";
-			aboutMenu.style.opacity = 1;
-			aboutOpened = true;
-			if (fileOpened) openMenu("file");
-			console.log("aboutOpened");
-		} else {
-			aboutMenu.style.pointerEvents = "none";
-			aboutMenu.style.opacity = 0;
-			aboutOpened = false;
-			console.log("aboutClosed");
-		}
-	}
-}
-
-document.getElementById("file-exit").onclick = exit();
-
-function exit() {
-	remote.getCurrentWindow().close();
-}
+const { ipcRenderer } = require("electron");
 
 function openSettings() {
 	document.getElementById("pref-parent").style.display = "block";
@@ -59,6 +12,12 @@ function exitSettings() {
 	document.getElementById("pref-parent").style.opacity = 0;
 	document.getElementById("pref-parent").style.pointerEvents = "none";
 }
+
+document.getElementById("exit-btn").addEventListener("click", () => {
+	ipcRenderer.send("app-quit");
+});
+
+document.getElementById("win-title").innerText = document.getElementById("title").innerHTML;
 
 function sgame() {
 	let opts = {

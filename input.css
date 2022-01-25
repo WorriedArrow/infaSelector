@@ -5,7 +5,7 @@
 *,
 *::before,
 *::after {
-	@apply select-none;
+	@apply select-none ring-transparent;
 }
 
 .tab-bar-item {
@@ -51,10 +51,30 @@
 	@apply pb-4 border-b-2 border-gray-200 mb-4;
 }
 
-.game-info--end {
-	@apply pb-0 border-b-0 !important;
+.game-info:last-child {
+	@apply pb-0 border-b-0;
 }
 
 .select {
 	@apply select-text !important;
+}
+
+.z-1 {
+	z-index: 1 !important;
+}
+
+.head-drag {
+	-webkit-app-region: drag;
+}
+
+.nodrag {
+	-webkit-app-region: no-drag;
+}
+
+a {
+	-webkit-app-region: no-drag;
+}
+
+::-webkit-scrollbar {
+	@apply hidden;
 }

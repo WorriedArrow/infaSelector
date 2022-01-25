@@ -2,25 +2,27 @@
 	"name": "infaselector",
 	"version": "1.2.0",
 	"description": "An unofficial Minecraft launcher like MultiMC.",
-	"main": "index.js",
+	"main": "./js/index.js",
 	"icon": "./img/icon-512x.png",
 	"displayName": "infaSelector",
 	"productName": "infaSelector",
 	"scripts": {
 		"start": "electron .",
 		"build": "npx electron-builder",
-		"tw": "tailwindcss -i ./src/input.css -o ./src/output.css --watch"
+		"tw": "tailwindcss -i ./input.css -o ./output.css --watch"
 	},
 	"author": "",
 	"license": "ISC",
 	"devDependencies": {
 		"@electron-forge/cli": "^6.0.0-beta.63",
+		"@electron/remote": "^2.0.1",
 		"electron": "^16.0.7",
 		"electron-packager": "^15.4.0",
 		"electron-winstaller": "^5.0.0"
 	},
 	"dependencies": {
 		"flying-squid": "^1.5.0",
+		"jquery": "^3.6.0",
 		"minecraft-launcher-core": "^3.16.11",
 		"tailwindcss": "^3.0.15"
 	},
