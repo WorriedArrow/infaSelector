@@ -1,15 +1,19 @@
 const { Client } = require("minecraft-launcher-core");
 const { ipcRenderer } = require("electron");
 
+const defaultTitle = "infaSelector v1.4ᴮᴱᵀᴬ";
+
 function openSettings() {
-	document.getElementById("pref-parent").style.display = "block";
-	document.getElementById("pref-parent").style.opacity = 1;
+	setTimeout(() => {
+		document.getElementById("pref-parent").style.opacity = 1;
+	});
 	document.getElementById("pref-parent").style.pointerEvents = "all";
 }
 
 function exitSettings() {
-	document.getElementById("pref-parent").style.display = "none";
-	document.getElementById("pref-parent").style.opacity = 0;
+	setTimeout(() => {
+		document.getElementById("pref-parent").style.opacity = 0;
+	});
 	document.getElementById("pref-parent").style.pointerEvents = "none";
 }
 
@@ -17,7 +21,37 @@ document.getElementById("exit-btn").addEventListener("click", () => {
 	ipcRenderer.send("app-quit");
 });
 
+function hideButtons() {
+	document.getElementById("exit-btn").style.display = "none";
+	document.getElementById("exit-btn").style.pointerEvents = "none";
+
+	document.getElementById("exit-btn").style.display = "none";
+	document.getElementById("exit-btn").style.pointerEvents = "none";
+}
+
+// Add button
+function openAdd() {
+	setTimeout(() => {
+		document.getElementById("add-parent").style.opacity = 1;
+	});
+	document.getElementById("add-parent").style.pointerEvents = "all";
+	updateTitle("Add installation | infaSelector v1.4ᴮᴱᵀᴬ");
+}
+
+function exitAdd() {
+	setTimeout(() => {
+		document.getElementById("add-parent").style.opacity = 0;
+	});
+	document.getElementById("add-parent").style.pointerEvents = "none";
+	updateTitle(defaultTitle);
+}
+
 document.getElementById("win-title").innerText = document.getElementById("title").innerHTML;
+
+function updateTitle(newTitle) {
+	document.getElementById("title").innerHTML = newTitle;
+	document.getElementById("win-title").innerText = document.getElementById("title").innerHTML;
+}
 
 function sgame() {
 	let opts = {

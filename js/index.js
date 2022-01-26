@@ -25,8 +25,6 @@ const createWindow = () => {
 
 app.whenReady().then(() => {
 	win = createWindow();
-	require("@electron/remote/main").initialize();
-	require("@electron/remote/main").enable(win.webContents);
 });
 
 ipcMain.on("app-quit", (_evt, _arg) => {

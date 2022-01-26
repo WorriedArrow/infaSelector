@@ -9,46 +9,29 @@
 }
 
 .tab-bar-item {
-	@apply px-5 hover:bg-gray-300 ease-in-out transition-all duration-700 rounded-t-md;
+	@apply px-5 hover:bg-gray-300 dark:hover:bg-slate-700 ease-in-out transition-all duration-700 rounded-t-md;
 }
 
 .btn-critical {
 	@apply mt-3 w-full inline-flex justify-center py-2 sm:mt-0 sm:ml-6 sm:w-auto sm:text-sm
-  	px-5 bg-blue-600 hover:bg-blue-700 text-white hover:text-slate-200 text-sm font-semibold rounded-md shadow focus:outline-none transition-all ease-in-out duration-300;
+  	px-5 bg-blue-600 hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-800 text-white hover:text-slate-200 text-sm font-semibold rounded-md shadow focus:outline-none transition-all ease-in-out duration-300;
 }
 
 .btn {
 	@apply mt-3 w-full inline-flex justify-center py-2 sm:mt-0 sm:ml-6 sm:w-auto sm:text-sm
-  	px-5 bg-blue-400 hover:bg-blue-500 text-white hover:text-slate-200 text-sm font-semibold rounded-md shadow focus:outline-none transition-all ease-in-out duration-300;
+  	px-5 bg-blue-400 hover:bg-blue-500 dark:bg-blue-500 dark:hover:bg-blue-600 text-white hover:text-slate-200 text-sm font-semibold rounded-md shadow focus:outline-none transition-all ease-in-out duration-300;
 }
 
 .ubuntu {
 	font-family: "Ubuntu", "Segoe UI", "Helvetica Neue", sans-serif;
 }
 
-.tab-bar-main {
-	@apply relative inline-block;
-}
-
-.tab-bar-panel {
-	@apply pr-6 inline-block;
-}
-
-.tab-bar-content {
-	@apply absolute block pt-2 opacity-0 pointer-events-none;
-}
-
-.tab-bar-menu-item {
-	@apply pl-5 cursor-pointer;
-}
-
-.pref-parent {
-	@apply opacity-0 pointer-events-none;
-	transition: opacity 300ms ease-in-out 100ms;
+.m-0i {
+	@apply m-0 !important;
 }
 
 .game-info {
-	@apply pb-4 border-b-2 border-gray-200 mb-4;
+	@apply pb-4 border-b-2 border-gray-200 dark:border-slate-600 mb-4;
 }
 
 .game-info:last-child {
@@ -73,8 +56,21 @@
 
 a {
 	-webkit-app-region: no-drag;
+	@apply dark:text-blue-400 dark:hover:text-blue-500 !important;
 }
 
 ::-webkit-scrollbar {
 	@apply hidden;
+}
+
+.icon {
+	@apply mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-gray-200 dark:bg-slate-700 dark:text-white sm:mx-0 sm:h-10 sm:w-10;
+}
+
+input {
+	@apply pl-1 bg-white dark:bg-slate-700;
+}
+
+*:focus {
+	outline: none;
 }

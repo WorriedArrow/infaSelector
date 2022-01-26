@@ -16,6 +16,7 @@
 	"devDependencies": {
 		"@electron-forge/cli": "^6.0.0-beta.63",
 		"@electron/remote": "^2.0.1",
+		"electromon": "^1.0.10",
 		"electron": "^16.0.7",
 		"electron-packager": "^15.4.0",
 		"electron-winstaller": "^5.0.0"
