@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title id="title">infaSelector v1.5ᴮᴱᵀᴬ</title>
+		<link rel="stylesheet" href="./output.css" />
+
+		<!--  JavaScript imports  -->
+		<script src="../js/components/console-msg.js"></script>
+		<script src="../js/renderer.js" defer></script>
+
+		<!--  Google Fonts imports  -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500;700&display=swap" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+	</head>
+	<body class="noscroll">
+		<div class="pt-16 pb-12 head-drag bg-gradient-to-r from-sky-500 dark:from-sky-600 to-indigo-500 dark:to-indigo-600">
+			<div id="win-title" class="text-xl text-center -translate-y-12 bg-transparent text-slate-200 dark:text-slate-50 z-1"></div>
+			<div class="bg-gradient-to-r from-sky-500 dark:from-sky-600 to-indigo-500 dark:to-indigo-600"></div>
+			<div class="relative p-4 px-4 bg-white shadow-xl nodrag pb-9 dark:bg-slate-800 dark:text-white ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:rounded-xl rounded-xl sm:p">
+				<p class="pb-3 text-2xl text-center ubuntu">Welcome to infaSelector OutaDevelopment 1.2</p>
+				<p class="ml-4">Please check out some of these websites:</p>
+				<ul class="ml-12 list-disc">
+					<li>
+						<a href="https://github.com/Lucas4545ah/infaSelector" target="_blank" class="text-blue-500 hover:text-blue-700 hover:underline hover:underline-offset-4">GitHub</a>
+						- check out source code
+					</li>
+					<li>
+						<a href="https://electronjs.org" target="_blank" class="text-blue-500 hover:text-blue-700 hover:underline hover:underline-offset-4">Electron</a>
+						- made GUI mode possible
+					</li>
+					<li>
+						<a href="https://www.npmjs.com/package/minecraft-launcher-core" target="_blank" class="text-blue-500 hover:text-blue-700 hover:underline hover:underline-offset-4"> minecraft-launcher-core </a>
+						- made launching Minecraft into an NPMJS package
+					</li>
+					<li>
+						<a href="https://tailwindcss.com" target="_blank" class="text-blue-500 hover:text-blue-700 hover:underline hover:underline-offset-4">TailwindCSS</a>
+						- made making web UI way faster
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- Settings button (top left corner) -->
+		<div class="fixed top-0 left-0 pt-4 pl-4 nodrag z-1" id="settings-button">
+			<div class="icon">
+				<!-- Heroicon name: outline/exclamation -->
+				<button type="button" type="button" title="Settings" onclick="openSettings()">
+					<svg class="w-6 h-6 text-grey-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+						/>
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+					</svg>
+				</button>
+			</div>
+		</div>
+		<!-- Exit button (top right corner) -->
+		<div class="fixed top-0 right-0 pt-4 pr-4 nodrag z-1" id="exit-button">
+			<div class="icon">
+				<!-- Heroicon name: outline/exclamation -->
+				<button type="button" type="button" title="Exit" id="exit-btn">
+					<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+					</svg>
+				</button>
+			</div>
+		</div>
+		<div class="relative px-6 pt-10 pb-8 bg-white rounded-none shadow-xl dark:bg-slate-700 ring-1 ring-gray-900/5 sm:mx-auto sm:px-10">
+			<div class="relative px-6 pt-10 pb-8 bg-white shadow-xl game-infos ring-1 dark:bg-slate-800 dark:text-white ring-gray-900/5 sm:max-w-lg sm:mx-auto sm:rounded-lg sm:px-10">
+				<!--  This div has no purpose other than to not make the bottom game info display a border.  -->
+				<div>
+					<div class="game-info">
+						<span class="text-4xl ubuntu">Installations</span>
+					</div>
+					<div class="game-info">
+						<span class="text-xl ubuntu select">Vanilla 1.16.5</span>
+						<button type="button" class="btn">Play</button>
+						<button type="button" class="btn">Settings</button>
+					</div>
+					<div class="game-info">
+						<span class="text-xl ubuntu select">Forge 1.13</span>
+						<button type="button" class="btn">Play</button>
+						<button type="button" class="btn">Settings</button>
+					</div>
+					<div class="game-info">
+						<span class="text-xl ubuntu select">Vanilla 1.12.2</span>
+						<button type="button" class="btn">Play</button>
+						<button type="button" class="btn">Settings</button>
+					</div>
+					<div class="game-info">
+						<span class="text-xl ubuntu select">Custom 1.15.1</span>
+						<button type="button" class="btn">Play</button>
+						<button type="button" class="btn">Settings</button>
+					</div>
+					<div class="game-info">
+						<span class="text-xl ubuntu select">Fabric 1.18.1</span>
+						<button type="button" class="btn" onclick="sgame();">Play</button>
+						<button type="button" class="btn">Settings</button>
+					</div>
+				</div>
+				<button type="button" class="pt-6 m-0i btn" onclick="openAdd();">Add</button>
+			</div>
+		</div>
+		<div id="pref-parent" class="fixed inset-0 z-10 overflow-y-auto opacity-0 pointer-events-none" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+			<div class="flex items-end justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
+				<div id="pref-overlay" class="fixed inset-0 transition-opacity bg-gray-500 bg-opacity-40" aria-hidden="true"></div>
+
+				<!-- This element is to trick the browser into centering the modal contents. -->
+				<span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+
+				<div id="preferences" class="inline-block overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl dark:bg-slate-800 dark:text-white sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+					<div class="px-4 pt-5 pb-4 bg-white dark:bg-slate-800 dark:text-white sm:p-6 sm:pb-4">
+						<div class="sm:flex sm:items-start">
+							<div class="icon">
+								<!-- Heroicon name: outline/exclamation -->
+								<svg class="w-6 h-6 text-grey-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+									/>
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+								</svg>
+							</div>
+							<div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+								<h3 class="text-lg font-medium leading-6 dark:bg-slate-800 dark:text-white ubuntu" id="modal-title">Settings</h3>
+								<div class="mt-2">
+									<p class="text-sm text-gray-500">
+										<button type="button" class="tab-bar-item">General</button>
+										<button type="button" class="tab-bar-item">Accesibility</button>
+										<button type="button" class="tab-bar-item">Default</button>
+										<!-- <div class="relative px-4 pt-1 bg-white rounded shadow-xl pb-9 ring-1 ring-gray-900/5 sm:max-w-lg sm:mx-auto sm:rounded sm:p" /> -->
+									</p>
+								</div>
+								<label for="max-ram">Maximum RAM</label>
+								<input name="max-ram" id="max-ram" type="number" value="0" class="w-12" min="1" max="1" />GB
+								<label for="min-ram">Minimum RAM</label>
+								<input name="min-ram" id="min-ram" type="number" value="0" class="w-12" min="1" max="1" />GB
+							</div>
+						</div>
+					</div>
+					<div class="px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+						<button type="button" type="button" class="btn-critical" id="settings-btn-close" onclick="exitSettings();">Close</button>
+						<button type="button" type="button" class="btn" id="settings-btn-apply">Apply</button>
+						<button type="button" type="button" class="btn" id="settings-btn-apply-and-close" onclick="exitSettings()">Apply & Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="add-parent" class="fixed inset-0 z-10 overflow-y-auto opacity-0 pointer-events-none" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+			<div class="flex items-end justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
+				<div id="add-overlay" class="fixed inset-0 transition-opacity bg-gray-500 bg-opacity-40" aria-hidden="true"></div>
+
+				<!-- This element is to trick the browser into centering the modal contents. -->
+				<span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+
+				<div id="add" class="inline-block overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl dark:bg-slate-800 dark:text-white sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+					<div class="px-4 pt-5 pb-4 text-black bg-white dark:bg-slate-800 dark:text-white sm:p-6 sm:pb-4">
+						<div class="sm:flex sm:items-start">
+							<div class="icon">
+								<!-- Heroicon name: outline/exclamation -->
+								<svg class="w-6 h-6 text-grey-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+								</svg>
+							</div>
+							<div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+								<h3 class="pb-2 text-lg font-medium leading-6 dark:bg-slate-800 dark:text-white ubuntu" id="modal-title">Add Installation</h3>
+								<form>
+									<table>
+										<tr class="pb-6">
+											<td><label for="path" class="pr-1">Path to JAR</label></td>
+											<td><input type="text" id="path" name="path" placeholder="G:\cool\awesome.jar" /></td>
+										</tr>
+										<tr class="pb-6">
+											<td><label for="name" class="pr-1">Name</label></td>
+											<td><input type="text" id="name" name="name" placeholder="Awesome | 1.18.1" default="Custom | Unknown Version" /></td>
+										</tr>
+									</table>
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="px-4 py-3 text-black bg-white dark:bg-slate-800 dark:text-white sm:px-6 sm:flex sm:flex-row-reverse">
+						<button type="button" type="button" class="btn" id="add-btn-add" onclick="exitAdd()">Add</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="console-parent" class="fixed inset-0 z-10 overflow-y-auto opacity-0 pointer-events-none" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+			<div class="flex items-end justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
+				<div id="console-overlay" class="fixed inset-0 transition-opacity bg-gray-500 bg-opacity-40" aria-hidden="true"></div>
+
+				<!-- This element is to trick the browser into centering the modal contents. -->
+				<span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+
+				<div id="console" class="inline-block overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl dark:bg-slate-800 dark:text-white sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+					<div class="px-4 pt-5 pb-4 text-black bg-white dark:bg-slate-800 dark:text-white sm:p-6 sm:pb-4">
+						<div class="sm:flex sm:items-start">
+							<div class="icon">
+								<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+								</svg>
+							</div>
+							<div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+								<h3 class="pb-2 text-lg font-medium leading-6 dark:bg-slate-800 dark:text-white ubuntu" id="modal-title">Console</h3>
+								<div class="console-msg-container" id="console-body" autoscroll></div>
+							</div>
+						</div>
+					</div>
+					<div class="px-4 py-3 text-black bg-white dark:bg-slate-800 dark:text-white sm:px-6 sm:flex sm:flex-row-reverse">
+						<button type="button" type="button" class="btn" id="console-btn-close" onclick="exitConsole()">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="alert" class="fixed bottom-0 left-0 right-0 z-10 flex items-center p-4 m-6 text-lg text-white bg-red-500 bg-opacity-75 rounded-md opacity-0 pointer-events-none ubuntu h-14 w-screenc">Error: No such file found. Please check the path and try again.</div>
+	</body>
+</html>

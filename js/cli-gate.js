@@ -1,6 +1,3 @@
-// import { createRequire } from "module";
-// const require = createRequire(import.meta.url);
-
 function AuthMCL(email, pass) {
 	return require("minecraft-launcher-core").Authenticator.getAuth(email, pass);
 }

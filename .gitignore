@@ -4,7 +4,10 @@ cli/test
 assets
 
 # Distributions, this is in releases.
-infaSelector-win32-*
+#  - Lecacy
+out
+#  - Current
+build/infaSelector-*-*
 
 # Executable files
 *.exe

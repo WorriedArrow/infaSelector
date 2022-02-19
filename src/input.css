@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after {
+	@apply select-none ring-transparent;
+}
+
+.tab-bar-item {
+	@apply px-2.5 transition-all duration-700 ease-in-out hover:bg-gray-300 dark:hover:bg-slate-700 rounded-t-md;
+}
+
+.btn-critical {
+	@apply inline-flex justify-center w-full px-5 py-2 mt-3 text-sm font-semibold text-white transition-all duration-300 ease-in-out bg-blue-600 rounded-md shadow sm:mt-0 sm:ml-6 sm:w-auto sm:text-sm hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-800 hover:text-slate-200 focus:outline-none;
+}
+
+.btn {
+	@apply inline-flex justify-center w-full px-5 py-2 mt-3 text-sm font-semibold text-white transition-all duration-300 ease-in-out bg-blue-400 rounded-md shadow sm:mt-0 sm:ml-6 sm:w-auto sm:text-sm hover:bg-blue-500 dark:bg-blue-500 dark:hover:bg-blue-600 hover:text-slate-200 focus:outline-none;
+}
+
+.ubuntu {
+	font-family: "Ubuntu", "Segoe UI", "Helvetica Neue", sans-serif;
+}
+
+.m-0i {
+	@apply m-0 !important;
+}
+
+.game-info {
+	@apply pb-4 mb-4 border-b-2 border-gray-200 dark:border-slate-600;
+}
+
+.game-info:last-child {
+	@apply pb-0 border-b-0;
+}
+
+.select {
+	@apply select-text !important;
+}
+
+.z-1 {
+	z-index: 1 !important;
+}
+
+.head-drag {
+	-webkit-app-region: drag;
+}
+
+.nodrag {
+	-webkit-app-region: no-drag;
+}
+
+a {
+	-webkit-app-region: no-drag;
+	@apply dark:text-blue-400 dark:hover:text-blue-500 !important;
+}
+
+.noscroll::-webkit-scrollbar {
+	@apply hidden;
+}
+
+.icon {
+	@apply flex items-center justify-center flex-shrink-0 w-12 h-12 mx-auto bg-gray-200 rounded-full dark:bg-slate-700 dark:text-white sm:mx-0 sm:h-10 sm:w-10;
+}
+
+input {
+	@apply pl-1 bg-white rounded-sm dark:bg-slate-700;
+}
+
+:focus,
+:hover {
+	outline: none;
+}
+
+#alert {
+	@apply fixed bottom-0 left-0 right-0 z-10 flex items-center p-4 m-6 text-lg text-white bg-red-500 bg-opacity-75 rounded-md h-14;
+	width: calc(100% - 3rem);
+	font-family: "Ubuntu", "Segoe UI", "Helvetica Neue", sans-serif;
+}
+
+console-msg[type="error"] {
+	@apply text-red-600;
+}
+
+console-msg[type="info"] {
+	@apply text-slate-800 dark:text-white;
+}
+
+console-msg[type="warn"] {
+	@apply text-yellow-400;
+}
+
+console-msg[type="debug"] {
+	@apply text-cyan-600;
+}
+
+console-msg {
+	@apply leading-3;
+	font-family: "JetBrains Mono", monospace;
+}
+
+.console-msg-container {
+	@apply h-48 overflow-y-auto;
+}
